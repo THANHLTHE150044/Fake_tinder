@@ -1,4 +1,4 @@
-package com.tencty.android.fake_tinder;
+package com.tencty.android.fake_tinder.Cards;
 
 public class cards {
     private String userId;
