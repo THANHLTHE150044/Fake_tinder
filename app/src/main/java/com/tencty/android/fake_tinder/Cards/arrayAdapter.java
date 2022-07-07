@@ -40,7 +40,6 @@ public class arrayAdapter extends ArrayAdapter<cards> {
                 break;
         }
 
-
         return convertView;
 
     }
