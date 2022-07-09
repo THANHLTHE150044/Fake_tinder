@@ -55,7 +55,7 @@ public class ChatActivity extends AppCompatActivity {
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         mRecyclerView.setNestedScrollingEnabled(false);
-        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setHasFixedSize(false);
         mChatLayoutManager = new LinearLayoutManager(ChatActivity.this);
         mRecyclerView.setLayoutManager(mChatLayoutManager);
         mChatAdapter = new ChatAdapter(getDataSetChat(), ChatActivity.this);
@@ -63,10 +63,10 @@ public class ChatActivity extends AppCompatActivity {
 
         mSendEditText = findViewById(R.id.message);
         mSendButton = findViewById(R.id.send);
-        mSendButton.setOnClickListener(new View.OnClickListener(){
 
+        mSendButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 sendMessage();
             }
         });
@@ -99,10 +99,9 @@ public class ChatActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+            public void onCancelled(DatabaseError databaseError) {
 
             }
-
         });
     }
 
@@ -148,8 +147,10 @@ public class ChatActivity extends AppCompatActivity {
         });
     }
 
+
     private ArrayList<ChatObject> resultsChat = new ArrayList<ChatObject>();
     private List<ChatObject> getDataSetChat() {
         return resultsChat;
     }
+
 }
